@@ -1,0 +1,11 @@
+This repository contains deployment configuration (Docker, Kubernetes) for
+running the Argo CD Model Context Protocol server.
+
+The MCP server itself is the npm package `argocd-mcp`, developed by the Argo
+Project and distributed under the Apache License 2.0.
+
+  Homepage:  https://github.com/argoproj-labs/mcp-for-argocd
+  npm:       https://www.npmjs.com/package/argocd-mcp
+
+This repo does not redistribute the server source code; at runtime the
+container installs `argocd-mcp` from npm per the Dockerfile.

@@ -1,0 +1,14 @@
+services:
+  argocd-mcp:
+    build: .
+    image: mcp-argocd:latest
+    ports:
+      - "3002:3002"
+    env_file: .env
+    environment:
+      ARGOCD_BASE_URL: ${ARGOCD_BASE_URL}
+      ARGOCD_API_TOKEN: ${ARGOCD_API_TOKEN}
+      # Uncomment only if needed (self-signed Argo CD TLS):
+      # NODE_TLS_REJECT_UNAUTHORIZED: "0"
+      # MCP_READ_ONLY: "true"
+    restart: unless-stopped
